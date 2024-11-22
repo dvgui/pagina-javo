@@ -53,6 +53,7 @@ Follow these steps to run the project locally.
 
 ## Project Structure
 
+```
 src/
 ├── components/ # UI components (chat, history, etc.)
 ├── pages/ # Next.js routes and server-side rendering
@@ -61,6 +62,7 @@ src/
 ├── api.ts # API integration with Llama 3.2
 ├── App.tsx # Main React component
 └── ...
+```
 
 ---
 
