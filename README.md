@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ChatGPT Clone
+
+A functional ChatGPT-like interface built using modern web technologies. This project demonstrates React 19 with server components, TypeScript, Tailwind CSS, Radix UI, and TanStack Query (React Query). The AI backend uses the **Llama 3.2 API** (or Ollama) to handle natural language processing.
+This project was built for fun to be trained by Libertarians to give replies with no leftism remarks.
+
+---
+
+## Features
+
+- **Chat Interface**: ChatGPT-style layout with history on the left and a chat panel on the right.
+- **AI Integration**: Powered by Llama 3.2 API for local AI inference.
+- **React Query**: Efficient state and server data management.
+- **Modern Design**: Styled using Tailwind CSS and Radix UI components.
+- **TypeScript**: Strong typing for a robust development experience.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to run the project locally.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Node.js** (>= 22.x)
+2. **NPM** or **Yarn**
+3. **Llama 3.2 API** running locally or a compatible API server
+4. Basic knowledge of React and TypeScript
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/chatgpt-clone.git
+   cd chatgpt-clone
+   ```
+2. Install dependencies:
+   npm install
 
-To learn more about Next.js, take a look at the following resources:
+3. Configure the API:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Edit the `src/api.ts` file to point to your Llama API endpoint:
+     const API_URL = "http://localhost:11434/api/generate";
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Start the development server:
+   npm run dev
 
-## Deploy on Vercel
+5. Open the app in your browser:
+   http://localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+src/
+├── components/ # UI components (chat, history, etc.)
+├── pages/ # Next.js routes and server-side rendering
+├── styles/ # Tailwind CSS configuration and styles
+├── hooks/ # React Query hooks and utilities
+├── api.ts # API integration with Llama 3.2
+├── App.tsx # Main React component
+└── ...
+
+---
+
+## API Usage
+
+### Llama 3.2 API
+
+Ensure you have the Llama 3.2 API running locally or remotely. Update the endpoint URL in `src/api.ts` if necessary.
+
+Example POST request to the `/generate` endpoint:
+{
+"model": "llama3.2",
+"prompt": "What is the capital of France?"
+}
+
+Expected response:
+{
+"response": "The capital of France is Paris."
+}
+
+### Common Errors
+
+- **CORS**: Ensure your API server is configured to allow requests from `http://localhost:3000`.
+- **404 Not Found**: Verify the API endpoint and ensure the server is running.
+
+---
+
+## Tech Stack
+
+- **React 19**: Latest React features with server components.
+- **TypeScript**: Strongly-typed JavaScript for better reliability.
+- **TanStack Query**: Data fetching and state management.
+- **Tailwind CSS**: Utility-first styling framework.
+- **Radix UI**: Accessible UI primitives.
+
+---
+
+## Future Plans
+
+- **AWS Bedrock Integration**: Transition from Llama 3.2 to AWS Bedrock for v2.
+- **Improved Prompt Engineering**: Fine-tune the prompts for better AI responses.
+- **Deploy to Production**: Hosting on Vercel, AWS, or similar platforms.
+
+---
+
+## Contributing
+
+Feel free to fork this repository and submit pull requests. Contributions and feedback are welcome!
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgments
+
+- [Llama 3.2 API](https://ollama.ai/)
+- [React](https://reactjs.org/)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+
+---
+
+Happy coding!
